@@ -1,0 +1,87 @@
+CREATE TABLE IF NOT EXISTS Pto_Ruta (
+	id_pto_ruta INT,
+	tipo_visita VARCHAR(25) NOT NULL,
+	tipo_ruta VARCHAR(50) NOT NULL,
+	
+	PRIMARY KEY(id_pto_ruta)
+);
+
+CREATE TABLE IF NOT EXISTS Tour (
+	id_tour INT,
+	motivo VARCHAR(50) NOT NULL,
+	
+	PRIMARY KEY(id_tour)
+);
+
+CREATE TABLE IF NOT EXISTS Viaje (
+	id_viaje INT,
+	id_tour INT,
+	fecha VARCHAR(50) NOT NULL,
+	
+	PRIMARY KEY(id_viaje,id_tour),
+	FOREIGN KEY (id_tour) REFERENCES Tour (id_tour)
+);
+
+CREATE TABLE IF NOT EXISTS Cliente (
+	cedula INT,
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	
+	PRIMARY KEY(cedula)
+);
+
+CREATE TABLE IF NOT EXISTS Hotel (
+	id_hotel INT,
+	nombre VARCHAR(50) NOT NULL,
+	ubicacion VARCHAR(50) NOT NULL,
+	
+	PRIMARY KEY(id_hotel)
+);
+
+CREATE TABLE IF NOT EXISTS tiene (
+	id_pto_ruta INT,
+	id_tour INT,
+	
+  	PRIMARY KEY(id_pto_ruta,id_tour),
+  	FOREIGN KEY (id_tour) REFERENCES Tour (id_tour),
+  	FOREIGN KEY (id_pto_ruta) REFERENCES Pto_Ruta (id_pto_ruta)
+);
+
+CREATE TABLE IF NOT EXISTS hace(
+	cedula INT,
+	id_viaje INT,
+	id_tour INT,	
+	
+  	PRIMARY KEY(cedula,id_viaje,id_tour),
+  	FOREIGN KEY (cedula) REFERENCES Cliente (cedula),
+  	FOREIGN KEY (id_viaje,id_tour) REFERENCES Viaje (id_viaje,id_tour)
+);
+
+CREATE TABLE IF NOT EXISTS Es_alojado_en(
+	cedula INT,
+	id_hotel INT,
+	
+	
+  	PRIMARY KEY(cedula,id_hotel),
+  	FOREIGN KEY (cedula) REFERENCES Cliente (cedula),
+  	FOREIGN KEY (id_hotel) REFERENCES Hotel (id_hotel)
+);
+
+
+CREATE TABLE IF NOT EXISTS Es_asignado_a(
+  	id_hotel INT,
+  	id_viaje INT,
+  	id_tour INT,
+  
+  	PRIMARY KEY(id_hotel,id_viaje,id_tour),
+ 	FOREIGN KEY (id_hotel) REFERENCES Hotel (id_hotel),
+ 	FOREIGN KEY (id_viaje,id_tour) REFERENCES Viaje (id_viaje,id_tour)
+);
+
+
+
+
+
+
+
+
