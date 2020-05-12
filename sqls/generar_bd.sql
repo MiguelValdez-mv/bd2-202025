@@ -1,3 +1,9 @@
+
+/*
+ * Fecha Actual: 12 Mayo del 2020
+ * 
+ */
+
 CREATE TABLE Pto_Ruta (
   id_pto_ruta INT PRIMARY KEY,
   tipo_visita VARCHAR(25) NOT NULL,
