@@ -82,3 +82,4 @@ ALTER TABLE Es_asignado_a ADD FOREIGN KEY (id_viaje) REFERENCES Viaje (id_viaje)
 
 ALTER TABLE Es_asignado_a ADD FOREIGN KEY (id_tour) REFERENCES Viaje (id_tour);
 
+ALTER TABLE Hotel ADD FOREIGN KEY (id_pto_ruta) REFERENCES Pto_Ruta (id_pto_ruta)
