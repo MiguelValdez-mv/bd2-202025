@@ -1,0 +1,1 @@
+SELECT AVG(edad) FROM hace,Cliente WHERE hace.cedula=Cliente.cedula

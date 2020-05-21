@@ -1,0 +1,1 @@
+select COUNT(*) from Viaje WHERE Year(Viaje.fecha) =YEAR(DATE_SUB(CURDATE(), INTERVAL 1 YEAR))
