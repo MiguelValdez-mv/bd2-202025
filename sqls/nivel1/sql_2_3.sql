@@ -1,0 +1,1 @@
+SELECT AVG(edad) FROM cliente_x_viaje_x_tour,cliente WHERE cliente_x_viaje_x_tour.cedula=cliente.cedula
