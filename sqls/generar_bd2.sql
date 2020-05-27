@@ -3,16 +3,11 @@
  *  Hecho por: Miguel Valdez C.I 26562643S
  */
 
-CREATE TABLE punto_ruta (
-  id INT PRIMARY KEY,
-  tipo_visita VARCHAR(25) NOT NULL,
-  tipo_ruta VARCHAR(50) NOT NULL,
-  ciudad VARCHAR(50) NOT NULL
-);
 
-CREATE TABLE tour (
-  id INT PRIMARY KEY,
-  finalidad VARCHAR(50) NOT NULL
+CREATE TABLE cliente (
+  cedula INT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  edad INT NOT NULL
 );
 
 CREATE TABLE viaje (
@@ -23,15 +18,21 @@ CREATE TABLE viaje (
   PRIMARY KEY (id_viaje, id_tour)
 );
 
-
-CREATE TABLE cliente (
-  cedula INT PRIMARY KEY,
-  nombre VARCHAR(50) NOT NULL,
-  edad INT NOT NULL
+CREATE TABLE tour (
+  id INT PRIMARY KEY,
+  finalidad VARCHAR(50) NOT NULL
 );
 
 
-CREATE TABLE Hotel (
+CREATE TABLE punto_ruta (
+  id INT PRIMARY KEY,
+  tipo_visita VARCHAR(25) NOT NULL,
+  tipo_ruta VARCHAR(50) NOT NULL,
+  ciudad VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE hotel (
   id INT PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
   ubicacion VARCHAR(50) NOT NULL,
@@ -67,10 +68,6 @@ CREATE TABLE hotel_x_viaje_x_tour (
 
 ALTER TABLE viaje ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
 
-ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
-
-ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
-
 ALTER TABLE cliente_x_viaje_x_tour ADD FOREIGN KEY (cedula) REFERENCES cliente (cedula);
 
 ALTER TABLE cliente_x_viaje_x_tour ADD FOREIGN KEY (id_viaje, id_tour) REFERENCES viaje (id_viaje, id_tour);
@@ -85,3 +82,6 @@ ALTER TABLE hotel_x_viaje_x_tour ADD FOREIGN KEY (id_viaje,id_tour) REFERENCES v
 
 ALTER TABLE hotel ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id)
 
+ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
+
+ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
