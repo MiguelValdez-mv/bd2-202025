@@ -1,5 +1,5 @@
 /*
- * Fecha Actual: 26 Mayo del 2020
+ * Fecha Actual: 7 Junio del 2020
  *  Hecho por: Miguel Valdez C.I 26562643S
  */
 
@@ -13,8 +13,8 @@ CREATE TABLE cliente (
 CREATE TABLE viaje (
   id_viaje INT,
   id_tour INT,
-  fechaInicio VARCHAR(50) NOT NULL,
-  fechaFin VARCHAR(50) NOT NULL,
+  fechaInicio DATE NOT NULL,
+  fechaFin DATE NOT NULL,
   PRIMARY KEY (id_viaje, id_tour)
 );
 
