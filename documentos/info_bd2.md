@@ -1,15 +1,15 @@
 # Informacion de Acceso a la BD
 
-**Usuario**: sql10343591
+**Usuario**: zPspl4AhPu
 
-**Clave**: 8kbR4EvfZB
+**Clave**: BSsqG36wFt
 
 # Servidor Remoto
 
-**Servidor**: sql10.freemysqlhosting.net
+**Servidor**: remotemysql.com
 
 **Puerto**: 3306
 
 # Acceso phpMyAdmin
 
-**Puerto**: http://www.phpmyadmin.co/db_structure.php?server=1&db=sql10343591
+**Puerto**: https://remotemysql.com/phpmyadmin/index.php?db=zPspl4AhPu
