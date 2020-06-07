@@ -80,7 +80,7 @@ ALTER TABLE hotel_x_viaje_x_tour ADD FOREIGN KEY (id_hotel) REFERENCES hotel (id
 
 ALTER TABLE hotel_x_viaje_x_tour ADD FOREIGN KEY (id_viaje,id_tour) REFERENCES viaje (id_viaje,id_tour);
 
-ALTER TABLE hotel ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id)
+ALTER TABLE hotel ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
 
 ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
 
