@@ -14,7 +14,7 @@ CREATE TABLE viaje (
   id_viaje INT,
   id_tour INT,
   fechaInicio DATE NOT NULL,
-  fechaFin DATE NOT NULL,
+  fechaFin DATE,
   PRIMARY KEY (id_viaje, id_tour)
 );
 
