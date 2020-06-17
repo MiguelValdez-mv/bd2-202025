@@ -1,7 +1,5 @@
 /* Realice una función que retorne el número de clientes que tienen reserva en un tour (por id) */
 
-
-/*------ Ejemplo usando mysql ------*/
 DELIMITER $$
 CREATE FUNCTION Clientes_en_Reserva(idTour int) RETURNS bigint
 BEGIN

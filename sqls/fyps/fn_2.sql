@@ -1,6 +1,5 @@
 /* Realice una función almacenada que dado un tour devuelva la cantidad de ciudades por las que pasa */
 
-/*------ Ejemplo usando mysql ------*/
 DELIMITER $$
 CREATE FUNCTION Ciudades_Tour(idTour int) RETURNS bigint
 BEGIN

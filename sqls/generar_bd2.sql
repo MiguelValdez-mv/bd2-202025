@@ -1,5 +1,5 @@
 /*
- * Fecha Actual: 7 Junio del 2020
+ * Fecha Actual: 17 Junio del 2020
  *  Hecho por: Miguel Valdez C.I 26562643S
  */
 
@@ -66,6 +66,14 @@ CREATE TABLE hotel_x_viaje_x_tour (
   PRIMARY KEY (id_hotel, id_viaje, id_tour)
 );
 
+CREATE TABLE actividades (
+  id_tour INT,
+  tipo_actividad VARCHAR(50),
+  descripcion VARCHAR(50),
+    
+  PRIMARY KEY (id_tour,tipo_actividad,descripcion)
+);
+
 ALTER TABLE viaje ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
 
 ALTER TABLE cliente_x_viaje_x_tour ADD FOREIGN KEY (cedula) REFERENCES cliente (cedula);
@@ -85,3 +93,5 @@ ALTER TABLE hotel ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
 ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_pto_ruta) REFERENCES punto_ruta (id);
 
 ALTER TABLE punto_ruta_x_tour ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
+
+ALTER TABLE actividades ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
