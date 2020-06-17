@@ -2,6 +2,7 @@
 
 
 /*------ Ejemplo usando mysql ------*/
+DELIMITER $$
 CREATE FUNCTION Clientes_en_Reserva(idTour int) RETURNS bigint
 BEGIN
     declare num_clientes bigint;
@@ -10,7 +11,8 @@ BEGIN
     where cliente_x_viaje_x_tour.id_tour = idTour;
 
     RETURN num_clientes;
-END
+END$$
+DELIMITER
 
 
 
