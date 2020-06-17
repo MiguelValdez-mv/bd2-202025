@@ -21,6 +21,7 @@ CREATE TABLE viaje (
 CREATE TABLE tour (
   id INT PRIMARY KEY,
   finalidad VARCHAR(50) NOT NULL
+  dias_duracion INT NOT NULL
 );
 
 
@@ -36,6 +37,7 @@ CREATE TABLE hotel (
   id INT PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
   ubicacion VARCHAR(50) NOT NULL,
+  categoria VARCHAR(50) NOT NULL,
   id_pto_ruta INT NOT NULL
 );
 

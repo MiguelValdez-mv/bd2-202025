@@ -18,4 +18,4 @@ BEGIN
 
     RETURN (cant_act_indicada / cant_total_acts) * 100;
 END $$
-DELIMITER ;
+DELIMITER ; 
