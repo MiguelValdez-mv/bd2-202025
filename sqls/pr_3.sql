@@ -14,7 +14,7 @@ BEGIN
         (
             select count(*) from cliente, cliente_x_viaje_x_tour
             where cliente.cedula = cliente_x_viaje_x_tour.cedula
-            and YEAR(NOW()) - YEAR(cliente_x_viaje_x_tour.fecha_reserva) <= 1
+            and cliente_x_viaje_x_tour.fecha_reserva BETWEEN NOW() - INTERVAL 365 DAY AND NOW()
         ) > 2, true, false )
     where cliente.cedula = cliente_x_viaje_x_tour.cedula;
    
