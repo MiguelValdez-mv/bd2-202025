@@ -9,14 +9,16 @@ CREATE PROCEDURE obtener_top_10()
 BEGIN
     
     /* eliminamos los valores anteriores de la tabla*/
-    DELETE FROM top10 WHERE 1
+    DELETE FROM top10 WHERE 1;
 
     INSERT INTO top10( id_reserva, cedula)
-    select  id_reserva, cedula from cliente_x_viaje_x_tour
-    order by id_reserva desc
-    limit 10;
-
-    /* En ese caso de ordena por id_reserva porque este es autoincrementable*/
+    select distinct cedula from cliente_x_viaje_x_tour order by id_reserva desc limit 10;
+    
+    /* En ese caso de ordena por id_reserva porque este es autoincrementable
+    Por otro lado, tomamos los ultimos 10 clientes (distintos) que han reservado*/
 
 END $$
 DELIMITER ;
+
+
+
