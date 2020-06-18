@@ -7,6 +7,7 @@
 CREATE TABLE cliente (
   cedula INT PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
+  es_frecuente BOOLEAN,
   edad INT NOT NULL
 );
 
@@ -17,7 +18,7 @@ CREATE TABLE top10(
 
 
 CREATE TABLE viaje (
-  id_viaje INT,
+  id_viaje INT AUTO_INCREMENT,
   id_tour INT,
   fechaInicio DATE NOT NULL,
   fechaFin DATE,
@@ -58,6 +59,7 @@ CREATE TABLE cliente_x_viaje_x_tour (
   cedula INT,
   id_viaje INT,
   id_tour INT,
+  fecha_reserva DATE,
   id_reserva int AUTO_INCREMENT,
   PRIMARY KEY (id_reserva)
 );

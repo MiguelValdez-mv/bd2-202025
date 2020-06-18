@@ -8,6 +8,7 @@ DELIMITER $$
 CREATE PROCEDURE obtener_top_10()
 BEGIN
     
+
     INSERT INTO top10( id_reserva, cedula)
     select  id_reserva, cedula from cliente_x_viaje_x_tour
     order by id_reserva desc
