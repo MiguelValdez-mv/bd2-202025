@@ -10,6 +10,12 @@ CREATE TABLE cliente (
   edad INT NOT NULL
 );
 
+CREATE TABLE top10(
+  cedula INT,
+  id_reserva int AUTO_INCREMENT PRIMARY KEY
+);
+
+
 CREATE TABLE viaje (
   id_viaje INT,
   id_tour INT,
@@ -20,7 +26,7 @@ CREATE TABLE viaje (
 
 CREATE TABLE tour (
   id INT PRIMARY KEY,
-  finalidad VARCHAR(50) NOT NULL
+  finalidad VARCHAR(50) NOT NULL,
   dias_duracion INT NOT NULL
 );
 
@@ -52,7 +58,8 @@ CREATE TABLE cliente_x_viaje_x_tour (
   cedula INT,
   id_viaje INT,
   id_tour INT,
-  PRIMARY KEY (cedula, id_viaje, id_tour)
+  id_reserva int AUTO_INCREMENT,
+  PRIMARY KEY (id_reserva)
 );
 
 CREATE TABLE cliente_x_hotel (
@@ -75,6 +82,9 @@ CREATE TABLE actividades (
     
   PRIMARY KEY (id_tour,tipo_actividad,descripcion)
 );
+
+
+
 
 ALTER TABLE viaje ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
 
