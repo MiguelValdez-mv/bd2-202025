@@ -12,8 +12,7 @@ CREATE TABLE cliente (
 );
 
 CREATE TABLE top10(
-  cedula INT,
-  id_reserva int AUTO_INCREMENT PRIMARY KEY
+  cedula INT PRIMARY KEY
 );
 
 

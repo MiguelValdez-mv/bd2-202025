@@ -11,7 +11,7 @@ BEGIN
     /* eliminamos los valores anteriores de la tabla*/
     DELETE FROM top10 WHERE 1;
 
-    INSERT INTO top10( id_reserva, cedula)
+    INSERT INTO top10(cedula)
     select distinct cedula from cliente_x_viaje_x_tour order by id_reserva desc limit 10;
     
     /* En ese caso de ordena por id_reserva porque este es autoincrementable
