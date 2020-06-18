@@ -8,6 +8,8 @@ DELIMITER $$
 CREATE PROCEDURE obtener_top_10()
 BEGIN
     
+    /* eliminamos los valores anteriores de la tabla*/
+    DELETE FROM top10 WHERE 1
 
     INSERT INTO top10( id_reserva, cedula)
     select  id_reserva, cedula from cliente_x_viaje_x_tour
