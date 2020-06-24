@@ -10,7 +10,7 @@ CREATE OR REPLACE TRIGGER marcar_tour_niño_insert
 BEFORE INSERT ON tour
 FOR EACH ROW  
 BEGIN  
-   SET NEW.tour_niños = Tour_Apto_Niños(NEW.id);
+   SET NEW.para_ninos = Tour_Apto_Niños(NEW.id);
 END $$
 DELIMITER ;
 
@@ -20,6 +20,6 @@ CREATE OR REPLACE TRIGGER marcar_tour_niño_update
 BEFORE UPDATE ON tour
 FOR EACH ROW  
 BEGIN  
-   SET NEW.tour_niños = Tour_Apto_Niños(NEW.id);
+   SET NEW.para_ninos = Tour_Apto_Niños(NEW.id);
 END $$
 DELIMITER ;
