@@ -27,7 +27,8 @@ CREATE TABLE viaje (
 CREATE TABLE tour (
   id INT PRIMARY KEY,
   finalidad VARCHAR(50) NOT NULL,
-  dias_duracion INT NOT NULL
+  dias_duracion INT NOT NULL,
+  tour_niños BOOLEAN
 );
 
 

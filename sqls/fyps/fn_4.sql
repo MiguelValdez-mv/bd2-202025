@@ -10,7 +10,7 @@ Menos del 20% de las actividades son museos.
 
 
 DELIMITER $$
-CREATE FUNCTION Tour_Apto_Niños(idTour int) RETURNS VARCHAR(50)
+CREATE FUNCTION Tour_Apto_Niños(idTour int) RETURNS BOOLEAN
 BEGIN
     declare cant_hoteles_familiares bigint;
     declare cant_total_categorias bigint;
@@ -56,11 +56,10 @@ BEGIN
             IF(cant_ciudades < 5,
 
                 IF(((cant_act_museos/cant_act_tot )*100) < 20, 
-                   'El tour especificado si cumple con los requisitos'
-
-                ,'El tour especificado no cumple con los requisitos' )
-            ,'El tour especificado no cumple con los requisitos')
-        ,'El tour especificado no cumple con los requisitos')
-    ,'El tour especificado no cumple con los requisitos');
+                  TRUE
+                ,FALSE )
+            ,FALSE)
+        ,FALSE)
+    ,FALSE);
 END $$
 DELIMITER ; 
