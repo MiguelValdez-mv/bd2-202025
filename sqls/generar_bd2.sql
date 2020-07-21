@@ -86,8 +86,6 @@ CREATE TABLE actividades (
 );
 
 
-
-
 ALTER TABLE viaje ADD FOREIGN KEY (id_tour) REFERENCES tour (id);
 
 ALTER TABLE cliente_x_viaje_x_tour ADD FOREIGN KEY (cedula) REFERENCES cliente (cedula);
